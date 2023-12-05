@@ -20,11 +20,9 @@
             border-radius: 60px;
             border: 1px solid white;
             background-color: transparent;
-            height: 120px;
-            width: 120px;
-            margin-right: 12px;
-            margin-top: 12px;
-            margin-left: 0;
+            height: 100px;
+            width: 100px;
+            margin: 0;
             cursor: pointer;
         }
         .btn-reset{
@@ -32,6 +30,14 @@
             height: fit-content;
             font-size: 16px;
             border-radius: 12px;
+            margin-left: 30%;
+            display: inline;
+            height: 32px;
+        }
+        p{
+            font-size: 20px;
+            text-align: center;
+            
         }
     </style>
 </head>
@@ -39,21 +45,21 @@
     <h1>Rock Paper Scissors</h1>
     <button class="btn-icon" onclick="playGame('Scissors')">
        
-        <img src="./images/scissors-emoji.png" class="icon" alt="">
+        <img src="/game_RockPaperScissor/images/scissors-emoji.png" class="icon" alt="">
     </button>
     <button class="btn-icon" onclick="playGame('Rock')">
-        <img src="./images/rock-emoji.png" class="icon" alt="">
+        <img src="/game_RockPaperScissor/images/rock-emoji.png" class="icon" alt="">
     </button>
     <button class="btn-icon" onclick="playGame('Paper')">
-        <img src="./images/paper-emoji.png" class="icon" alt="">
+        <img src="/game_RockPaperScissor/images/paper-emoji.png" class="icon" alt="">
     </button>
     
     <p class="playerPick"></p>
     <p class="score"></p>
     <p class="result"></p>
-    <button class="btn-reset" onclick="resetScore()">
+    <div><button class="btn-reset" onclick="resetScore()">
         Reset Score
-    </button>
+    </button></div>
     <script>
         
         function ScissorsRockPaper(){
@@ -133,7 +139,7 @@
                 score.wins +=1;
             localStorage.setItem("score",JSON.stringify(score));
             
-            document.querySelector('.playerPick').innerHTML = `You<img src="./images/${userPick}-emoji.png" class="icon"> and Conputer <img src="./images/${conpuerterPick}-emoji.png" class="icon">`
+            document.querySelector('.playerPick').innerHTML = `You<img src="/game_RockPaperScissor/images/${userPick}-emoji.png" class="icon"> and Conputer <img src="/game_RockPaperScissor/images/${conpuerterPick}-emoji.png" class="icon">`
             updateScore()
 
             document.querySelector('.result').innerHTML=`Result: ${result} `
