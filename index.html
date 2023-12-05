@@ -43,14 +43,14 @@
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
-    <button class="btn-icon" onclick="playGame('Scissors')">
+    <button class="btn-icon" onclick="playGame('scissors')">
        
         <img src="/game_RockPaperScissor/images/scissors-emoji.png" class="icon" alt="">
     </button>
-    <button class="btn-icon" onclick="playGame('Rock')">
+    <button class="btn-icon" onclick="playGame('rock')">
         <img src="/game_RockPaperScissor/images/rock-emoji.png" class="icon" alt="">
     </button>
-    <button class="btn-icon" onclick="playGame('Paper')">
+    <button class="btn-icon" onclick="playGame('paper')">
         <img src="/game_RockPaperScissor/images/paper-emoji.png" class="icon" alt="">
     </button>
     
@@ -95,38 +95,38 @@
             score =  JSON.parse(localStorage.getItem('score'))|| {wins:0,loses:0,ties:0};
             
             console.log(score);
-            if(userPick === 'Scissors'){
-                if(conpuerterPick === 'Rock'){
+            if(userPick === 'scissors'){
+                if(conpuerterPick === 'rock'){
                     result = 'You loses'
                     
-                }else if(conpuerterPick === 'Paper'){
+                }else if(conpuerterPick === 'paper'){
                     result = 'You win'
                     
-                }else if(conpuerterPick === 'Scissors'){	
+                }else if(conpuerterPick === 'scissors'){	
                     result = 'Tie'
                     
                 }
 
-            }else if(userPick === 'Rock'){
-                if(conpuerterPick === 'Rock'){
+            }else if(userPick === 'rock'){
+                if(conpuerterPick === 'rock'){
                     result = 'Tie'
                     
-                }else if(conpuerterPick === 'Paper'){
+                }else if(conpuerterPick === 'paper'){
                     result = 'You loses'
                     
-                }else if(conpuerterPick === 'Scissors'){	
+                }else if(conpuerterPick === 'scissors'){	
                     result = 'You win'
                     
                 }
 
-            }else if(userPick === 'Paper'){
-                if(conpuerterPick === 'Rock'){
+            }else if(userPick === 'paper'){
+                if(conpuerterPick === 'rock'){
                     result = 'You win'
                     
-                }else if(conpuerterPick === 'Paper'){
+                }else if(conpuerterPick === 'paper'){
                     result = 'Tie'
                     
-                }else if(conpuerterPick === 'Scissors'){	
+                }else if(conpuerterPick === 'scissors'){	
                     result = 'You loses'
                     
                 }
@@ -139,7 +139,7 @@
                 score.wins +=1;
             localStorage.setItem("score",JSON.stringify(score));
            
-            document.querySelector('.playerPick').innerHTML = `You<img src="./images/${userPick}-emoji.png" class="icon"> and Conputer <img src="/game_RockPaperScissor/images/${conpuerterPick}-emoji.png" class="icon">`
+            document.querySelector('.playerPick').innerHTML = `You<img src="./images/${userPick}-emoji.png" class="icon"> and Conputer <img src="./images/${conpuerterPick}-emoji.png" class="icon">`
             updateScore()
 
             document.querySelector('.result').innerHTML=`Result: ${result} `
