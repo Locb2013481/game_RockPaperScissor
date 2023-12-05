@@ -138,8 +138,8 @@
             else if(result === 'You win')
                 score.wins +=1;
             localStorage.setItem("score",JSON.stringify(score));
-            
-            document.querySelector('.playerPick').innerHTML = `You<img src="/game_RockPaperScissor/images/${userPick}-emoji.png" class="icon"> and Conputer <img src="/game_RockPaperScissor/images/${conpuerterPick}-emoji.png" class="icon">`
+           
+            document.querySelector('.playerPick').innerHTML = `You<img src="./images/${userPick}-emoji.png" class="icon"> and Conputer <img src="/game_RockPaperScissor/images/${conpuerterPick}-emoji.png" class="icon">`
             updateScore()
 
             document.querySelector('.result').innerHTML=`Result: ${result} `
