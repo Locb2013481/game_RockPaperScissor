@@ -66,11 +66,11 @@
             let randomNumber = Math.random();
             let computer = '';
             if(randomNumber >=0 && randomNumber <1/3)
-                computer = 'Scissors';
+                computer = 'scissors';
             else if(randomNumber >=1/3 && randomNumber <2/3)
-                computer = 'Rock';
+                computer = 'rock';
             else if(randomNumber >=2/3 && randomNumber <1)
-                computer = 'Paper';
+                computer = 'paper';
             return computer;
         }
         let score = {
@@ -89,44 +89,44 @@
              document.querySelector('.result').innerHTML=''
         }
         function playGame(userPick){
-            let conpuerterPick = ScissorsRockPaper();
+            let computerpick = ScissorsRockPaper();
             result = '';
             
             score =  JSON.parse(localStorage.getItem('score'))|| {wins:0,loses:0,ties:0};
             
             console.log(score);
             if(userPick === 'scissors'){
-                if(conpuerterPick === 'rock'){
+                if(computerpick === 'rock'){
                     result = 'You loses'
                     
-                }else if(conpuerterPick === 'paper'){
+                }else if(computerpick === 'paper'){
                     result = 'You win'
                     
-                }else if(conpuerterPick === 'scissors'){	
+                }else if(computerpick === 'scissors'){	
                     result = 'Tie'
                     
                 }
 
             }else if(userPick === 'rock'){
-                if(conpuerterPick === 'rock'){
+                if(computerpick === 'rock'){
                     result = 'Tie'
                     
-                }else if(conpuerterPick === 'paper'){
+                }else if(computerpick === 'paper'){
                     result = 'You loses'
                     
-                }else if(conpuerterPick === 'scissors'){	
+                }else if(computerpick === 'scissors'){	
                     result = 'You win'
                     
                 }
 
             }else if(userPick === 'paper'){
-                if(conpuerterPick === 'rock'){
+                if(computerpick === 'rock'){
                     result = 'You win'
                     
-                }else if(conpuerterPick === 'paper'){
+                }else if(computerpick === 'paper'){
                     result = 'Tie'
                     
-                }else if(conpuerterPick === 'scissors'){	
+                }else if(computerpick === 'scissors'){	
                     result = 'You loses'
                     
                 }
@@ -139,12 +139,12 @@
                 score.wins +=1;
             localStorage.setItem("score",JSON.stringify(score));
            
-            document.querySelector('.playerPick').innerHTML = `You<img src="./images/${userPick}-emoji.png" class="icon"> and Conputer <img src="./images/${conpuerterPick}-emoji.png" class="icon">`
+            document.querySelector('.playerPick').innerHTML = `You<img src="./images/${userPick}-emoji.png" class="icon"> and Conputer <img src="./images/${computerpick}-emoji.png" class="icon">`
             updateScore()
 
             document.querySelector('.result').innerHTML=`Result: ${result} `
 
-            // alert(`Ban chon "${userPick}" va may tinh chon "${conpuerterPick}" ket qua: ${result} Win: ${score.wins} Loses: ${score.loses} Ties: ${score.ties}`)
+            // alert(`Ban chon "${userPick}" va may tinh chon "${computerpick}" ket qua: ${result} Win: ${score.wins} Loses: ${score.loses} Ties: ${score.ties}`)
 
         }
         function updateScore(){
